@@ -6,6 +6,13 @@ spec:
   containers:
   - image: luksa/kubia-unhealthy
     name: kubia
+    resources:
+      limits:
+        memory: 512Mi
+        cpu: "1"
+      requests:
+        memory: 256Mi
+        cpu: "0.2"
     livenessProbe:
       httpGet:
         path: /
