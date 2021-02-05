@@ -1,16 +1,13 @@
-apiVersion: networking.k8s.io/v1
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: kubia
 spec:
   rules:
   - host: kubia.example.com
-  - http:
+    http:
       paths:
       - path: /
-        pathType: Prefix
         backend:
-          service:
-            name: kubia-nodeport
-            port:
-              number: 80
+          serviceName: kubia-nodeport
+          servicePort: 80
