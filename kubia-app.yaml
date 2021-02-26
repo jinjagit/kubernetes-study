@@ -13,7 +13,7 @@ spec:
         app: kubia
     spec:
       containers:
-      - name: kubia
+      - name: nodejs
         resources:
           limits:
             memory: 512Mi
